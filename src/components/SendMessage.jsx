@@ -4,6 +4,7 @@ import firebase from "firebase/compat/app";
 import { Input } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 
+
 function SendMessage(){
   const [message,setMessage] =useState("");
 
@@ -28,12 +29,20 @@ function SendMessage(){
 
     <form onSubmit={sendMessage}>
     <div className="sendMsg">
-      <Input
-      type="text"
-      placeholder="メッセージ入力"
-      value={message}
-      // message ステートにinout内容を格納
-      onChange={(e)=>setMessage(e.target.value)}/>
+
+    <Input
+            style={{
+              width: "78%",
+              fontSize: "15px",
+              fontWeight: "550",
+              marginLeft: "5px",
+              marginBottom: "-3px",
+            }}
+            placeholder="メッセージを入力"
+            type="text"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
       <SendIcon/>
     </div>
 
