@@ -25,7 +25,9 @@ function Line(){
       {messages.map(({ id, text, photoURL, uid }) => (
         // eslint-disable-next-line react/jsx-key
         <div>
-          <div key={id}>
+          <div key={id} className={`msg ${
+          uid === auth.currentUser.uid ? "sent" : "received"
+          }`}>
             <img src={photoURL} alt="" />
             <p>{text}</p>
           </div>
